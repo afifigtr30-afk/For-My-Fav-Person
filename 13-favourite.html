@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Ainaa Sarah 🤍 — Favourite</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+
+<audio id="bgMusic" loop>
+  <!-- add your song here: <source src="your-song.mp3" type="audio/mpeg"> -->
+</audio>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:86.7%;"></div></div>
+<div id="musicToggle" title="play/pause music">🎵</div>
+<nav class="page-nav" id="pageNav">
+  <a href="index.html" class="" data-label="Start"></a>
+  <a href="02-kita.html" class="" data-label="Us"></a>
+  <a href="03-tarikh.html" class="" data-label="The Day"></a>
+  <a href="04-untuk-kau.html" class="" data-label="For You"></a>
+  <a href="05-wish.html" class="" data-label="Wishes"></a>
+  <a href="06-open-when.html" class="" data-label="Open When"></a>
+  <a href="07-sebab.html" class="" data-label="Reasons"></a>
+  <a href="08-kagum.html" class="" data-label="Admire"></a>
+  <a href="09-surat.html" class="" data-label="Letter"></a>
+  <a href="10-suara.html" class="" data-label="Voice"></a>
+  <a href="11-spin.html" class="" data-label="Spin"></a>
+  <a href="12-video.html" class="" data-label="Video"></a>
+  <a href="13-favourite.html" class="active" data-label="Favourite"></a>
+  <a href="14-playlist.html" class="" data-label="Playlist"></a>
+  <a href="15-penutup.html" class="" data-label="Finale"></a>
+</nav>
+
+<div class="hearts-bg" id="heartsBg">
+  <span class="fheart" style="left:6%; animation-delay:0s;">💗</span>
+  <span class="fheart" style="left:18%; animation-delay:2.4s;">🩷</span>
+  <span class="fheart" style="left:32%; animation-delay:5s;">💕</span>
+  <span class="fheart" style="left:48%; animation-delay:1.2s;">💗</span>
+  <span class="fheart" style="left:63%; animation-delay:6.5s;">🩷</span>
+  <span class="fheart" style="left:78%; animation-delay:3.6s;">💕</span>
+  <span class="fheart" style="left:90%; animation-delay:8s;">💗</span>
+</div>
+
+<section id="p9" class="aurora alt grain" data-label="Favourite">
+  <div class="section-eyebrow reveal">07 — favourite</div>
+  <h2 class="script reveal" style="font-size:3rem; text-align:center; margin-bottom:12px;">My Favourite Photos of You!</h2>
+  <p class="reveal d1" style="font-size:.75rem; color:var(--plum); margin-bottom:18px;">tap any photo to see it bigger</p>
+  <div style="display:flex; gap:32px; flex-wrap:wrap; justify-content:center; align-items:center;">
+    
+    <!-- Polaroid 1 -->
+    <div class="polaroid reveal lb-trigger" data-idx="0" style="transform:rotate(-4deg); cursor:pointer;">
+      <div class="photo-slot" style="width:200px; height:240px;">
+        <img src="10 ainaa.jpeg" alt="Favourite 1" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+    </div>
+
+    <!-- Polaroid 2 -->
+    <div class="polaroid reveal d1 lb-trigger" data-idx="1" style="transform:rotate(2deg); cursor:pointer;">
+      <div class="photo-slot" style="width:220px; height:260px;">
+        <img src="12 ainaa.jpeg" alt="Favourite 2" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+    </div>
+
+    <!-- Polaroid 3 -->
+    <div class="polaroid reveal d2 lb-trigger" data-idx="2" style="transform:rotate(-2deg); cursor:pointer;">
+      <div class="photo-slot" style="width:200px; height:240px;">
+        <img src="11 ainaa.jpeg" alt="Favourite 3" style="width:100%; height:100%; object-fit:cover; display:block;">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="pager-nav">
+  <a class="pager-btn" id="prevPageLink" href="12-video.html" aria-label="Previous">‹</a>
+  <span class="pager-label">13 / 15</span>
+  <a class="pager-btn" id="nextPageLink" href="14-playlist.html" aria-label="Next">›</a>
+</div>
+
+<script src="common.js"></script>
+<script src="scripts/p9.js"></script>
+
+<style>
+.image-lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.image-lightbox-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  object-fit: contain;
+}
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let modal = document.createElement('div');
+  modal.className = 'image-lightbox-modal';
+  modal.innerHTML = '<img src="" alt="Enlarged view">';
+  document.body.appendChild(modal);
+
+  const modalImg = modal.querySelector('img');
+
+  const photos = document.querySelectorAll('.polaroid img, .photo-slot img');
+  photos.forEach(img => {
+    img.style.cursor = 'pointer';
+    img.addEventListener('click', (e) => {
+      e.stopPropagation();
+      modalImg.src = img.src;
+      modal.style.display = 'flex';
+    });
+  });
+
+  modal.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+});
+</script>
+
+</body>
+</html>

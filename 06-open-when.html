@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Ainaa Sarah 🤍 — Open When</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+
+
+<audio id="bgMusic" loop>
+  <!-- add your song here: <source src="your-song.mp3" type="audio/mpeg"> -->
+</audio>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:40.0%;"></div></div>
+<div id="musicToggle" title="play/pause music">🎵</div>
+<nav class="page-nav" id="pageNav">
+  <a href="index.html" class="" data-label="Start"></a>
+  <a href="02-kita.html" class="" data-label="Us"></a>
+  <a href="03-tarikh.html" class="" data-label="The Day"></a>
+  <a href="04-untuk-kau.html" class="" data-label="For You"></a>
+  <a href="05-wish.html" class="" data-label="Wishes"></a>
+  <a href="06-open-when.html" class="active" data-label="Open When"></a>
+  <a href="07-sebab.html" class="" data-label="Reasons"></a>
+  <a href="08-kagum.html" class="" data-label="Admire"></a>
+  <a href="09-surat.html" class="" data-label="Letter"></a>
+  <a href="10-suara.html" class="" data-label="Voice"></a>
+  <a href="11-spin.html" class="" data-label="Spin"></a>
+  <a href="12-video.html" class="" data-label="Video"></a>
+  <a href="13-favourite.html" class="" data-label="Favourite"></a>
+  <a href="14-playlist.html" class="" data-label="Playlist"></a>
+  <a href="15-penutup.html" class="" data-label="Finale"></a>
+</nav>
+
+<div class="hearts-bg" id="heartsBg">
+  <span class="fheart" style="left:6%; animation-delay:0s;">💗</span>
+  <span class="fheart" style="left:18%; animation-delay:2.4s;">🩷</span>
+  <span class="fheart" style="left:32%; animation-delay:5s;">💕</span>
+  <span class="fheart" style="left:48%; animation-delay:1.2s;">💗</span>
+  <span class="fheart" style="left:63%; animation-delay:6.5s;">🩷</span>
+  <span class="fheart" style="left:78%; animation-delay:3.6s;">💕</span>
+  <span class="fheart" style="left:90%; animation-delay:8s;">💗</span>
+</div>
+
+<section id="p4b" class="aurora alt grain" data-label="Open When">
+  <div class="section-eyebrow reveal">bonus</div>
+  <h2 class="script reveal" style="font-size:2.8rem; margin-bottom:10px;">Open When...</h2>
+  <p class="reveal d1" style="font-size:.78rem; color:var(--plum); margin-bottom:22px;">tap a title to open the note</p>
+  <div class="ow-grid reveal d1">
+    <div class="ow-card ow-card-special" data-note="5">
+      <div class="ow-title">🔒 open when you want something special <span class="chev">⌄</span></div>
+      <div class="ow-body">There's a little puzzle waiting for you — a code only you can crack. Tap below to try 🤍
+        <button class="puzzle-open-btn" id="openPuzzleBtn">unlock the surprise →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECIAL PUZZLE OVERLAY ============ -->
+<div id="puzzleOverlay" class="puzzle-overlay">
+  <div class="puzzle-card">
+    <button class="puzzle-close" id="puzzleClose" aria-label="close">×</button>
+    <div class="puzzle-eyebrow">a little puzzle just for you</div>
+    <h3 class="puzzle-title">Enter the secret code 🔐</h3>
+    <p class="puzzle-hint">Hint: <em>the day and month you came into this world (DDMM)</em></p>
+
+    <div class="code-lock" id="codeLock">
+      <div class="digit" data-i="0">0</div>
+      <div class="digit" data-i="1">0</div>
+      <div class="digit" data-i="2">0</div>
+      <div class="digit" data-i="3">0</div>
+    </div>
+    <div class="lock-controls">
+      <button class="lock-btn" data-act="up" data-i="0">▲</button>
+      <button class="lock-btn" data-act="up" data-i="1">▲</button>
+      <button class="lock-btn" data-act="up" data-i="2">▲</button>
+      <button class="lock-btn" data-act="up" data-i="3">▲</button>
+    </div>
+    <div class="lock-controls">
+      <button class="lock-btn" data-act="down" data-i="0">▼</button>
+      <button class="lock-btn" data-act="down" data-i="1">▼</button>
+      <button class="lock-btn" data-act="down" data-i="2">▼</button>
+      <button class="lock-btn" data-act="down" data-i="3">▼</button>
+    </div>
+    <button class="puzzle-submit" id="puzzleSubmit">unlock 🔓</button>
+    <p class="puzzle-msg" id="puzzleMsg">&nbsp;</p>
+
+    <div class="puzzle-reveal" id="puzzleReveal">
+      <div class="reveal-heart">🤍</div>
+      <p class="reveal-title">You cracked it, Ainaa Sarah 🎉</p>
+      <p class="reveal-body">
+        The code was <strong>30 · 07</strong> — the exact day the world got a little brighter
+        because you were born. Twenty years later and I still can't believe I get to love you.
+        <br><br>
+        Happy 20th birthday, my whole heart. Here's to every version of you — the one I met,
+        the one I love today, and every one yet to come. I'll be right here for all of them.
+        <br><br>
+        <span style="font-family:'Caveat'; font-size:1.6rem; color:var(--navy);">Forever yours, Sarah 💌</span>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div class="pager-nav">
+  <a class="pager-btn" id="prevPageLink" href="05-wish.html" aria-label="Previous">‹</a>
+  <span class="pager-label">6 / 15</span>
+  <a class="pager-btn" id="nextPageLink" href="07-sebab.html" aria-label="Next">›</a>
+</div>
+
+<script src="common.js"></script>
+<script src="scripts/p4b.js"></script>
+<script src="scripts/puzzle.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Ainaa Sarah 🤍 — Spin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400;1,9..144,500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<canvas id="confettiCanvas"></canvas>
+
+
+<audio id="bgMusic" loop>
+  <!-- add your song here: <source src="your-song.mp3" type="audio/mpeg"> -->
+</audio>
+
+<div class="progress-wrap"><div class="progress-bar" id="progressBar" style="width:73.3%;"></div></div>
+<div id="musicToggle" title="play/pause music">🎵</div>
+<nav class="page-nav" id="pageNav">
+  <a href="index.html" class="" data-label="Start"></a>
+  <a href="02-kita.html" class="" data-label="Us"></a>
+  <a href="03-tarikh.html" class="" data-label="The Day"></a>
+  <a href="04-untuk-kau.html" class="" data-label="For You"></a>
+  <a href="05-wish.html" class="" data-label="Wishes"></a>
+  <a href="06-open-when.html" class="" data-label="Open When"></a>
+  <a href="07-sebab.html" class="" data-label="Reasons"></a>
+  <a href="08-kagum.html" class="" data-label="Admire"></a>
+  <a href="09-surat.html" class="" data-label="Letter"></a>
+  <a href="10-suara.html" class="" data-label="Voice"></a>
+  <a href="11-spin.html" class="active" data-label="Spin"></a>
+  <a href="12-video.html" class="" data-label="Video"></a>
+  <a href="13-favourite.html" class="" data-label="Favourite"></a>
+  <a href="14-playlist.html" class="" data-label="Playlist"></a>
+  <a href="15-penutup.html" class="" data-label="Finale"></a>
+</nav>
+
+<div class="hearts-bg" id="heartsBg">
+  <span class="fheart" style="left:6%; animation-delay:0s;">💗</span>
+  <span class="fheart" style="left:18%; animation-delay:2.4s;">🩷</span>
+  <span class="fheart" style="left:32%; animation-delay:5s;">💕</span>
+  <span class="fheart" style="left:48%; animation-delay:1.2s;">💗</span>
+  <span class="fheart" style="left:63%; animation-delay:6.5s;">🩷</span>
+  <span class="fheart" style="left:78%; animation-delay:3.6s;">💕</span>
+  <span class="fheart" style="left:90%; animation-delay:8s;">💗</span>
+</div>
+
+<section id="p8" class="aurora alt grain" data-label="Spin">
+  <div class="section-eyebrow reveal">06 — spin the wheel</div>
+  <h2 class="script reveal" style="font-size:2.6rem; text-align:center; max-width:600px;">can't decide where our next date is? just spin! 🎡</h2>
+  <p class="reveal d1" style="font-family:'Fraunces'; font-style:italic; font-size:.85rem; color:var(--plum); margin:6px 0 4px;"></p>
+  <div class="wheel-wrap reveal d1">
+    <div class="wheel-pointer"></div>
+    <canvas id="wheelCanvas" width="280" height="280"></canvas>
+    <div class="wheel-hub">🤍</div>
+  </div>
+  <button class="spin-btn reveal d2" id="spinBtn">SPIN! 🎡</button>
+  <p class="script reveal d2" id="wheelResult" style="margin-top:22px; font-size:1.7rem; text-align:center; color:var(--navy); min-height:1.5em; max-width:420px;">press the button, let fate decide 😚</p>
+  <p style="font-size:.72rem; color:var(--plum); margin-top:10px; opacity:.8;"></p>
+</section>
+
+<div class="pager-nav">
+  <a class="pager-btn" id="prevPageLink" href="10-suara.html" aria-label="Previous">‹</a>
+  <span class="pager-label">11 / 15</span>
+  <a class="pager-btn" id="nextPageLink" href="12-video.html" aria-label="Next">›</a>
+</div>
+
+<script src="common.js"></script>
+<script src="scripts/p8.js"></script>
+</body>
+</html>
